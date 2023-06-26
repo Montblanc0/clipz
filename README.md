@@ -10,6 +10,11 @@ A video-sharing platform built with **Angular 16** with user authentication, dat
 - Video features provided by [video.js](https://videojs.com/ "video.js")
 - Style created with [Tailwind](https://tailwindcss.com/ "Tailwind")
 
+# Restrictions
+
+- Users are limited to a maximum of 5 uploads per account
+- Maximum file size is 10 MiBs
+- Only supports MP4, MKV and WEBM video files
 
 # Development Setup
 
