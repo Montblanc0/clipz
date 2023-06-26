@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, WritableSignal, inject, signal } from "@angular/core";
 import { ModalService } from "../services/modal.service";
 import { AuthService } from "../services/auth.service";
 
@@ -11,11 +11,16 @@ export class NavComponent {
 	private modal: ModalService = inject(ModalService);
 	protected auth: AuthService = inject(AuthService);
 	readonly modalID = "auth";
+	isOpen: WritableSignal<boolean> = signal(false);
 
 	constructor() {}
 
 	openModal(e: Event): void {
 		e.preventDefault();
 		this.modal.toggleModal(this.modalID);
+	}
+
+	toggleMenu() {
+		this.isOpen.update(bool => !bool);
 	}
 }
